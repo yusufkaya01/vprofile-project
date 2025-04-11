@@ -30,5 +30,17 @@ pipeline {
             }
         }
 
+        stage('Test') {
+            steps {
+                sh 'mnv test'
+            }
+        }
+
+        stage('Checktyle Analysis') {
+            steps {
+                sh 'mvn checkstyle:checkstyle'
+            }
+        }
+
     }
 }
